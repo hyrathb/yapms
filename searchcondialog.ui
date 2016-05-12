@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SearchConDialog</class>
+ <widget class="QDialog" name="SearchConDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>715</width>
+    <height>549</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>编辑搜索条件</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" rowspan="5" colspan="3">
+    <widget class="QTableView" name="tableView">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SingleSelection</enum>
+     </property>
+     <property name="textElideMode">
+      <enum>Qt::ElideRight</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QCheckBox" name="orcheckBox">
+     <property name="text">
+      <string>OR</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="clearButton">
+     <property name="text">
+      <string>清空</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QPushButton" name="deleteButton">
+     <property name="text">
+      <string>删除</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QPushButton" name="addButton">
+     <property name="text">
+      <string>添加条件</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3" colspan="4">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="fieldlabel">
+       <property name="text">
+        <string>域</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="fieldcomboBox"/>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="3" colspan="4">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="conlabel">
+       <property name="text">
+        <string>条件</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="concomboBox"/>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="3" colspan="4">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="vallabel">
+       <property name="text">
+        <string>值</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="valEdit"/>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="5">
+    <widget class="QPushButton" name="allButton">
+     <property name="text">
+      <string>通配符</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QPushButton" name="oneButton_2">
+     <property name="text">
+      <string>单通配符</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+  <zorder>buttonBox</zorder>
+  <zorder>tableView</zorder>
+  <zorder>clearButton</zorder>
+  <zorder>deleteButton</zorder>
+  <zorder>orcheckBox</zorder>
+  <zorder>addButton</zorder>
+  <zorder>allButton</zorder>
+  <zorder>oneButton_2</zorder>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SearchConDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SearchConDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchConDialog</receiver>
+   <slot>clears()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>523</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchConDialog</receiver>
+   <slot>deleteSelect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>523</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchConDialog</receiver>
+   <slot>addCondition()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>579</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>allButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchConDialog</receiver>
+   <slot>addAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>660</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>oneButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>SearchConDialog</receiver>
+   <slot>addOne()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>570</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>clears()</slot>
+  <slot>deleteSelect()</slot>
+  <slot>addCondition()</slot>
+  <slot>addLB()</slot>
+  <slot>addRB()</slot>
+  <slot>addNOT()</slot>
+  <slot>addAll()</slot>
+  <slot>addOne()</slot>
+ </slots>
+</ui>
